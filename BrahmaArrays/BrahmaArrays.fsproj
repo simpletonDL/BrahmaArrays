@@ -108,8 +108,8 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="OpenCL.Net.dll.config" />
-      <Compile Include="Array\Array.fs" />
       <Compile Include="Array\Builder.fs" />
+      <Compile Include="Array\Array.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
     <Import Project="..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets" Condition="Exists('..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets')" />
