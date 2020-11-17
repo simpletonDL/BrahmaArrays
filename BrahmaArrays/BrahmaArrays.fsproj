@@ -99,7 +99,6 @@
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
         <Content Include="packages.config" />
-        <Compile Include="Builder.fs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\WorkflowBasics\WorkflowBasics.fsproj">
@@ -110,6 +109,7 @@
     <ItemGroup>
       <None Include="OpenCL.Net.dll.config" />
       <Compile Include="Array\Array.fs" />
+      <Compile Include="Array\Builder.fs" />
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
     <Import Project="..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets" Condition="Exists('..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets')" />
