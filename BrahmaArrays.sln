@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WorkflowBasics", "WorkflowBasics\WorkflowBasics.fsproj", "{5C2D91AF-8B4B-423C-9122-5DC9445AA1DC}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BrahmaArrays", "BrahmaArrays\BrahmaArrays.fsproj", "{C249711A-019C-45BB-8AE2-4521A0692EF9}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Examples", "Examples\Examples.fsproj", "{44B75D93-B081-4D98-B656-79CD651815BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C2D91AF-8B4B-423C-9122-5DC9445AA1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2D91AF-8B4B-423C-9122-5DC9445AA1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2D91AF-8B4B-423C-9122-5DC9445AA1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2D91AF-8B4B-423C-9122-5DC9445AA1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C249711A-019C-45BB-8AE2-4521A0692EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C249711A-019C-45BB-8AE2-4521A0692EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C249711A-019C-45BB-8AE2-4521A0692EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C249711A-019C-45BB-8AE2-4521A0692EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B75D93-B081-4D98-B656-79CD651815BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B75D93-B081-4D98-B656-79CD651815BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B75D93-B081-4D98-B656-79CD651815BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B75D93-B081-4D98-B656-79CD651815BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
