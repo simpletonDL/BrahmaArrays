@@ -6,6 +6,7 @@ open WorkflowBasics.State.Builder
 open Brahma.OpenCL
 open Brahma.FSharp.OpenCL.Extensions
 
+open FSharp.Quotations
 type GpuArray<'a> = GpuArray of array<'a>
 
 let ToGpu (xs : array<'a>) =
@@ -29,17 +30,17 @@ let ToHost (GpuArray (xs : array<'a>)) : State<GpuContext, array<'a>> =
         ctx.CommandQueue.Add(xs.ToHost ctx.Provider).Finish () |> ignore
         return xs
     }
-
-let MapSquare (GpuArray (input : array<int>)) =
+    
+let GpuMap (f: Expr<'a -> 'a>) (GpuArray (input : array<int>)) =
     GpuWorkflow () {
         let xs = Array.zeroCreate input.Length
         let! output = ToGpu xs
         
         let code =
             <@
-                fun (range : _1D) (input : array<int>) (output : array<int>) ->
+                fun (range : _1D) (input : array<'a>) (output : array<'a>) ->
                     let idx = range.GlobalID0
-                    output.[idx] <- input.[idx] * input.[idx]
+                    output.[idx] <- (%f) input.[idx]
             @>
 
         let binder kernelP =
@@ -49,3 +50,5 @@ let MapSquare (GpuArray (input : array<int>)) =
         do! GpuRun code binder    
         return output
     }
+
+let GpuMapSquare = GpuMap <@ fun x -> x * x @>

@@ -21,9 +21,10 @@ let main _ =
     let workflow =
         GpuWorkflow () {
             let! xs = ToGpu hostArray
-            let! ys = MapSquare xs
-            let! zs = MapSquare ys
-            return! ToHost zs
+            let! ys = GpuMap <@ fun x -> x * x + 10 @> xs
+            let! zs = GpuMapSquare ys
+            let! gs = GpuMap <@ fun x -> x + 1 @> zs
+            return! ToHost gs
         }
     
     let res = execState workflow ctx
